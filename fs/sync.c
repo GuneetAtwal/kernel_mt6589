@@ -387,7 +387,6 @@ SYSCALL_DEFINE0(sync)
 	ACCESS_ONCE(sync_seq)++;
 	WARN_ON_ONCE((sync_seq & 0x1) != 0);
 	mutex_unlock(&sync_mutex);
->>>>>>> ba7208b... fs/sync: Make sync() satisfy many requests with one invocation
 	return 0;
 }
 
